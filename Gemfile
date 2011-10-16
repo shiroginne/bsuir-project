@@ -7,6 +7,12 @@ gem 'rails', '3.1.1'
 
 gem 'mysql2'
 
+gem 'cancan'
+gem 'devise'
+gem 'simple_form'
+gem 'kaminari'
+gem 'squeel'
+gem 'symbolize'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +28,7 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
