@@ -21,10 +21,22 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 # так лучше с точки зрения безопасности, но если не хотите - прсото закомментируйте этот таск
 
 after "deploy:update_code", :copy_database_config
+after "deploy:update_code", :install_gems
+after "deploy:update_code", :copy_app_config
 
 task :copy_database_config, roles => :app do
   db_config = "#{shared_path}/database.yml"
   run "cp #{db_config} #{release_path}/config/database.yml"
+end
+
+task :copy_app_config, roles => :app do
+  db_config = "#{shared_path}/app_config.yml"
+  run "cp #{db_config} #{release_path}/config/app_config.yml"
+end
+
+
+task :install_gems, roles => :app do
+  run "bundle install --deployment"
 end
 
 set :unicorn_rails, "/var/lib/gems/1.8/bin/unicorn_rails"

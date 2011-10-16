@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title
+      АИС успеваемости студентов
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    - if current_user
+      = "Здравствуй, #{current_user.email}"
+      %br
+      = link_to "Выйти", destroy_user_session_url, :method => :delete
+    - else
+      %br
+      = link_to 'Войти', new_user_session_url
+      %br
+      = link_to 'Зарегистрироваться', new_user_registration_url
+
+    %div.content-wrapper
+
+      = yield

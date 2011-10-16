@@ -1,5 +1,6 @@
 .bundle
 config/database.yml
+config/app_config.yml
 log/*.log
 tmp/
 .sass-cache/

@@ -9,8 +9,10 @@ gem 'mysql2'
 
 gem 'cancan'
 gem 'devise'
-gem 'simple_form'
+gem 'haml'
 gem 'kaminari'
+gem 'simple_form'
+gem 'rack' , '1.3.3'
 gem 'squeel'
 gem 'symbolize'
 

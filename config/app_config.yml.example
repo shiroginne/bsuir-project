@@ -1,0 +1,13 @@
+common: &common
+  api_secret: 'secret'
+  mail_sender: 'noreply@example.com'
+  host: 'localhost:3000'
+
+production:
+  <<: *common
+
+development:
+  <<: *common
+
+test:
+  <<: *common

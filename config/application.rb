@@ -39,6 +39,8 @@ module Bsuir
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    require 'app_config'
+    config.action_mailer.default_url_options =  {:host => AppConfig.host}
     # Enable the asset pipeline
     config.assets.enabled = true
 
