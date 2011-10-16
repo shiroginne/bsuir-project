@@ -19,9 +19,9 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 # эта секция для того, чтобы вы не хранили доступ к базе в системе контроля версий. Поместите dayabase.yml в shared,
 # чтобы он копировался в нужный путь при каждом выкладывании новой версии кода
 # так лучше с точки зрения безопасности, но если не хотите - прсото закомментируйте этот таск
+before "deploy:update_code", :install_gems
 
 after "deploy:update_code", :copy_database_config
-after "deploy:update_code", :install_gems
 after "deploy:update_code", :copy_app_config
 
 task :copy_database_config, roles => :app do
@@ -36,6 +36,7 @@ end
 
 
 task :install_gems, roles => :app do
+  run "cd #{release_path}"
   run "bundle install --deployment"
 end
 
