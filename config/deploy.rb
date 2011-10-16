@@ -59,7 +59,7 @@ namespace :deploy do
   end
   desc "Start application"
   task :start, :roles => :app do
-    run "#{unicorn_rails} -Dc #{unicorn_conf}"
+    run "bundle exec #{unicorn_rails} -Dc #{unicorn_conf}"
   end
 
   desc "Stop application"
@@ -69,6 +69,6 @@ namespace :deploy do
 
   desc "Restart Application"
   task :restart, :roles => :app do
-    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_rails} -Dc #{unicorn_conf}"
+    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || bundle exec #{unicorn_rails} -Dc #{unicorn_conf}"
   end
 end
