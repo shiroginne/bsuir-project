@@ -71,7 +71,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
-    mysql2 (0.2.13)
+    mysql2 (0.3.7)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -159,7 +159,7 @@ DEPENDENCIES
   haml
   jquery-rails
   kaminari
-  mysql2
+  mysql2 (>= 0.3)
   rack (= 1.3.3)
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
