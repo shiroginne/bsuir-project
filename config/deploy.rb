@@ -24,6 +24,11 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 after "deploy:update_code", :run_bundler
 after "deploy:update_code", :copy_database_config
 after "deploy:update_code", :copy_app_config
+after "deploy:update_code", :precompile_assets
+
+task :precompile_assets, roles => :app do
+  run "cd #{release_path} && bundle exec rake assets:precompile"
+end
 
 task :copy_database_config, roles => :app do
   db_config = "#{shared_path}/database.yml"

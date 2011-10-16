@@ -42,7 +42,7 @@ module Bsuir
     require 'app_config'
     config.action_mailer.default_url_options =  {:host => AppConfig.host}
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
