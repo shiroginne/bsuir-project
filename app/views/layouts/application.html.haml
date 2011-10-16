@@ -10,7 +10,7 @@
     - if current_user
       = "Здравствуй, #{current_user.email}"
       %br
-      = link_to "Выйти", destroy_user_session_url, :method => :delete
+      = link_to "Выйти", destroy_user_session_url
     - else
       %br
       = link_to 'Войти', new_user_session_url
