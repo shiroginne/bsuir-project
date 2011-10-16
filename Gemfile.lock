@@ -34,6 +34,12 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.7)
+    capistrano (2.8.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -49,6 +55,7 @@ GEM
     execjs (1.2.9)
       multi_json (~> 1.0)
     haml (3.1.3)
+    highline (1.6.2)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.16)
@@ -64,7 +71,14 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
-    mysql2 (0.3.7)
+    mysql2 (0.2.13)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.2.1)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
     orm_adapter (0.0.5)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -139,12 +153,13 @@ PLATFORMS
 
 DEPENDENCIES
   cancan
+  capistrano
   coffee-rails (~> 3.1.1)
   devise
   haml
   jquery-rails
   kaminari
-  mysql2
+  mysql2 (< 0.3)
   rack (= 1.3.3)
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
