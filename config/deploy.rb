@@ -31,7 +31,7 @@ task :copy_database_config, roles => :app do
 end
 
 task :run_bundler, :roles => :web do
-  run "cd #{release_path} && bundle install --deployment --path ~/.gem"
+  run "cd #{release_path} && bundle install --deployment --quiet --path ~/.gem"
 end
 
 task :copy_app_config, roles => :app do
