@@ -11,11 +11,16 @@
       = "Здравствуй, #{current_user.email}"
       %br
       = link_to "Выйти", destroy_user_session_url
+      %br
+      = link_to 'Админка', admin_root_url if can?(:read, :admin_dash)
+      = link_to 'Пользователи', admin_users_url if can?(:manage, User)
     - else
       %br
       = link_to 'Войти', new_user_session_url
       %br
       = link_to 'Зарегистрироваться', new_user_registration_url
+
+
 
     %div.content-wrapper
 

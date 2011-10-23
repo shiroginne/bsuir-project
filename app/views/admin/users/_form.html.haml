@@ -1,0 +1,7 @@
+= simple_form_for @user, :url => [:admin, @user] do |f|
+  - %w[last_name first_name middle_name email].each do |attr|
+    = f.input attr
+  = f.input :role, :as => :select
+  = f.input :password
+  = f.input :password_confirmation
+  = f.submit "Сохранить"

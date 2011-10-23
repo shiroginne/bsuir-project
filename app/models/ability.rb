@@ -19,6 +19,9 @@ class Ability
   end
 
   def admin
+    can :read, :admin_dash
     can :manage, :all
+    cannot :destroy, @user
+    cannot :assign_role, @user
   end
 end

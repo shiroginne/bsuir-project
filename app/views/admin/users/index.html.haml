@@ -1,0 +1,23 @@
+%h2
+  Пользователи
+
+%table
+  %thead
+    %tr
+      - %w[email role created_at].each do |attr|
+        %th
+          = User.human_attribute_name(attr)
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          = link_to user.full_name, [:admin, user] if can?(:read, user)
+        - %w[email role created_at].each do |attr|
+          %td
+            = user.send(attr)
+        %td
+          = link_to 'Редактировать', [:edit, :admin, user] if can?(:edit, user)
+          = button_to 'Удалить', [:destroy, :admin, user] if can?(:destroy, user)
+
+

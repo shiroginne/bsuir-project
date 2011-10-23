@@ -10,10 +10,11 @@ gem 'cancan'
 gem 'devise'
 gem 'haml'
 gem 'kaminari'
-gem 'simple_form'
 gem 'rack' , '1.3.3'
+gem 'responders'
+gem 'simple_form'
 gem 'squeel'
-gem 'symbolize'
+gem "symbolize", :require => "symbolize/active_record"
 
 # Gems used only for assets and not required
 # in production environments by default.
