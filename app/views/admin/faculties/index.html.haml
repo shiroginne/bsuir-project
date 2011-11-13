@@ -1,0 +1,22 @@
+%h2
+  Факультеты
+
+= link_to 'Создать факультет', [:new, :admin, :faculty] if can?(:create, Faculty)
+
+%table
+  %thead
+    %tr
+      - %w[abbr_name full_name].each do |attr|
+        %th
+          = Faculty.human_attribute_name(attr)
+      %th
+  %tbody
+    - @faculties.each do |faculty|
+      %tr
+        %td
+          = link_to faculty.abbr_name, [:admin, faculty] if can?(:read, faculty)
+        %td
+          = faculty.full_name
+        %td
+          = link_to 'Редактировать', [:edit, :admin, faculty] if can?(:edit, faculty)
+          = button_to 'Удалить', [:admin, faculty], :method => :delete if can?(:destroy, faculty)

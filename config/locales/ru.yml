@@ -6,6 +6,7 @@ ru:
 
     attributes:
       user:
+        full_name: "ФИО"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         created_at: "Дата создания"

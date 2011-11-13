@@ -4,7 +4,7 @@
 %table
   %thead
     %tr
-      - %w[email role created_at].each do |attr|
+      - %w[full_name email role created_at].each do |attr|
         %th
           = User.human_attribute_name(attr)
       %th
@@ -18,6 +18,4 @@
             = user.send(attr)
         %td
           = link_to 'Редактировать', [:edit, :admin, user] if can?(:edit, user)
-          = button_to 'Удалить', [:destroy, :admin, user] if can?(:destroy, user)
-
-
+          = button_to 'Удалить', [:admin, user], :method => :delete if can?(:destroy, user)

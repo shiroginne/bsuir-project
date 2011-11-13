@@ -6,6 +6,7 @@ Bsuir::Application.routes.draw do
   namespace :admin do
     resource :home, :only => :show
     resources :users
+    resources :faculties
 
     root :to => 'homes#show'
   end

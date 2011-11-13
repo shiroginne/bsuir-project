@@ -22,9 +22,9 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 # чтобы он копировался в нужный путь при каждом выкладывании новой версии кода
 # так лучше с точки зрения безопасности, но если не хотите - прсото закомментируйте этот таск
 
-after "deploy:update_code", :run_bundler
-after "deploy:update_code", :copy_database_config
-after "deploy:update_code", :copy_app_config
+before "deploy:assets:precompile", :copy_app_config
+before "deploy:assets:precompile", :run_bundler
+before "deploy:assets:precompile", :copy_database_config
 
 task :copy_database_config, :roles => :app do
   db_config = "#{shared_path}/database.yml"
