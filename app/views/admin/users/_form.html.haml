@@ -2,6 +2,6 @@
   - %w[last_name first_name middle_name email].each do |attr|
     = f.input attr
   = f.input :role, :as => :symbolize_select
-  = f.input :password
+  = f.input :password, :input_html => {:autocomplete => 'off'}
   = f.input :password_confirmation
   = f.submit "Сохранить"

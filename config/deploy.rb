@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # У вас должна быть настроена авторизация ssh по сертификатам
+load 'deploy/assets'
 
 set :application, "bsuir"
 set :default_environment, {
@@ -25,7 +26,7 @@ after "deploy:update_code", :run_bundler
 after "deploy:update_code", :copy_database_config
 after "deploy:update_code", :copy_app_config
 
-task :copy_database_config, roles => :app do
+task :copy_database_config, :roles => :app do
   db_config = "#{shared_path}/database.yml"
   run "cp #{db_config} #{release_path}/config/database.yml"
 end
