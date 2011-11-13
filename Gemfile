@@ -7,14 +7,18 @@ gem 'rails', '3.1.1'
 
 gem 'mysql2', '>= 0.3'
 gem 'cancan'
+gem 'coffee-script'
 gem 'devise'
 gem 'haml'
+gem 'jquery-rails'
 gem 'kaminari'
 gem 'rack' , '1.3.3'
 gem 'responders'
 gem 'simple_form'
+gem "therubyracer", :require => 'v8'
 gem 'squeel'
 gem "symbolize", :require => "symbolize/active_record"
+gem 'uglifier'
 
 # Gems used only for assets and not required
 # in production environments by default.

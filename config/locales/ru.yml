@@ -12,6 +12,10 @@ ru:
         first_name: "Имя"
         last_name: "Фамилия"
         middle_name: "Отчество"
+        role: "Роль"
+        enums:
+          role:
+            admin: "Администратор"
       faculty:
         full_name: "Название"
         abbr_name: "Аббревиатура"
