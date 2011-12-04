@@ -1,0 +1,5 @@
+= simple_form_for @speciality, :url => [:admin, @speciality] do |f|
+  = f.input :abbr_name
+  = f.input :full_name
+  = f.association :faculty, :as => :select, :label_method => :abbr_name
+  = f.submit "Сохранить"

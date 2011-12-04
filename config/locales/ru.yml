@@ -3,6 +3,7 @@ ru:
     models:
       user: "Пользователь"
       faculty: "Факультет"
+      speciality: "Специальность"
 
     attributes:
       user:
@@ -17,7 +18,13 @@ ru:
         enums:
           role:
             admin: "Администратор"
+            student: "Студент"
+            clerk: "Секретарь"
       faculty:
         full_name: "Название"
         abbr_name: "Аббревиатура"
+      speciality:
+        full_name: "Название"
+        abbr_name: "Аббревиатура"
+        faculty: "Факультет"
 

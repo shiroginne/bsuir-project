@@ -4,5 +4,10 @@ User.new(:email => 'admin@example.com', :password => 'admin', :first_name => "А
   user.role = :admin
 end.save!
 
-Faculty.create!(:abbr_name => 'ФИТиУ', :full_name => 'Факультет информационных технологий и управления')
-Faculty.create!(:abbr_name => 'ФКСиС', :full_name => 'Факультет компьютерных систем и сетей')
+fitu = Faculty.create!(:abbr_name => 'ФИТиУ', :full_name => 'Факультет информационных технологий и управления')
+ksis = Faculty.create!(:abbr_name => 'ФКСиС', :full_name => 'Факультет компьютерных систем и сетей')
+
+Speciality.create!(:abbr_name => 'АСОИ', :full_name => 'Автоматизированные системы обработки информации', :faculty => fitu)
+Speciality.create!(:abbr_name => 'ИИ', :full_name => 'Искуственный интеллект', :faculty => fitu)
+
+Speciality.create!(:abbr_name => 'ВМСиС', :full_name => 'Вычислительные машины, системы и сети', :faculty => ksis)

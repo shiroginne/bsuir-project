@@ -1,0 +1,24 @@
+%h2
+  Специальности
+
+= link_to 'Создать Специальность', [:new, :admin, :speciality] if can?(:create, Speciality)
+
+%table
+  %thead
+    %tr
+      - %w[abbr_name full_name faculty].each do |attr|
+        %th
+          = Speciality.human_attribute_name(attr)
+      %th
+  %tbody
+    - @specialities.each do |speciality|
+      %tr
+        %td
+          = link_to speciality.abbr_name, [:admin, speciality] if can?(:read, speciality)
+        %td
+          = speciality.full_name
+        %td
+          = speciality.faculty.abbr_name
+        %td
+          = link_to 'Редактировать', [:edit, :admin, speciality] if can?(:edit, speciality)
+          = button_to 'Удалить', [:admin, speciality], :method => :delete if can?(:destroy, speciality)

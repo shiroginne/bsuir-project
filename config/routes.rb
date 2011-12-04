@@ -7,6 +7,7 @@ Bsuir::Application.routes.draw do
     resource :home, :only => :show
     resources :users
     resources :faculties
+    resources :specialities
 
     root :to => 'homes#show'
   end

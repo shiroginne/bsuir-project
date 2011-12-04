@@ -1,0 +1,12 @@
+%h2
+  = @speciality.abbr_name
+
+%dl
+  %dt
+    Полное название
+  %dd
+    = @speciality.full_name
+  %dt
+    Факультет
+  %dd
+    = @speciality.faculty.abbr_name

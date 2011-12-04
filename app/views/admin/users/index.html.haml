@@ -4,7 +4,7 @@
 %table
   %thead
     %tr
-      - %w[full_name email role created_at].each do |attr|
+      - %w[full_name role email created_at].each do |attr|
         %th
           = User.human_attribute_name(attr)
       %th
@@ -13,7 +13,9 @@
       %tr
         %td
           = link_to user.full_name, [:admin, user] if can?(:read, user)
-        - %w[email role created_at].each do |attr|
+        %td
+          = user.role_text
+        - %w[email created_at].each do |attr|
           %td
             = user.send(attr)
         %td
