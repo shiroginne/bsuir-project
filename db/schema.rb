@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204122051) do
+ActiveRecord::Schema.define(:version => 20111204143702) do
 
   create_table "faculties", :force => true do |t|
     t.string   "full_name"
@@ -26,10 +26,49 @@ ActiveRecord::Schema.define(:version => 20111204122051) do
     t.datetime "updated_at"
   end
 
+  create_table "marks", :force => true do |t|
+    t.integer  "student_id"
+    t.integer  "speciality_subject_term_id"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "specialities", :force => true do |t|
     t.integer  "faculty_id"
     t.string   "abbr_name"
     t.string   "full_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "speciality_subject_terms", :force => true do |t|
+    t.integer  "term_id"
+    t.integer  "subject_id"
+    t.integer  "speciality_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_name"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string   "full_name"
+    t.string   "abbr_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "terms", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
