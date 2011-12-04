@@ -1,0 +1,22 @@
+%h2
+  Группы
+
+= link_to 'Создать Группу', [:new, :admin, :group] if can?(:create, Group)
+
+%table
+  %thead
+    %tr
+      - %w[number speciality].each do |attr|
+        %th
+          = Group.human_attribute_name(attr)
+      %th
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td
+          = link_to group.number, [:admin, group] if can?(:read, group)
+        %td
+          = group.speciality.abbr_name
+        %td
+          = link_to 'Редактировать', [:edit, :admin, group] if can?(:edit, group)
+          = button_to 'Удалить', [:admin, group], :method => :delete if can?(:destroy, group)

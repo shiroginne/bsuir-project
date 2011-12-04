@@ -4,6 +4,7 @@ ru:
       user: "Пользователь"
       faculty: "Факультет"
       speciality: "Специальность"
+      group: "Группа"
 
     attributes:
       user:
@@ -27,4 +28,6 @@ ru:
         full_name: "Название"
         abbr_name: "Аббревиатура"
         faculty: "Факультет"
-
+      group:
+        number: "Номер"
+        speciality: "Специальность"

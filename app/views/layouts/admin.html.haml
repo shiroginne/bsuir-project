@@ -14,6 +14,7 @@
     = link_to 'Пользователи', admin_users_url if can?(:manage, User)
     = link_to 'Факультеты', admin_faculties_url if can?(:manage, Faculty)
     = link_to 'Специальности', admin_specialities_url if can?(:manage, Speciality)
+    = link_to 'Группы', admin_groups_url if can?(:manage, Group)
 
     %div.content-wrapper
       = yield
